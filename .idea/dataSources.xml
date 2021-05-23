@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mysql8" uuid="09a81996-2dc9-4a8e-8653-2b1a492d89e3">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="myblog_sqlite" uuid="c50fa580-f84f-4ebb-879e-eaf14c157c6f">
+    <data-source source="LOCAL" name="data-dev.sqlite" uuid="90a83af8-75e4-4957-ad4b-0e9a5d38fbdf">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/data-dev.sqlite</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="myblog" uuid="99d15842-88b6-4e9d-b7df-a883e2efa084">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/testdb</jdbc-url>
+      <jdbc-url>jdbc:sqlite:data-dev.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>
