@@ -55,6 +55,20 @@ class User(UserMixin, db.Model):
         db.session.add(self)
         return True
 
+    @staticmethod
+    def reset_password(token, new_password):
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token.encode('utf-8'))
+        except:
+            return False
+        user = User.query.get(data.get('reset'))
+        if user is None:
+            return False
+        user.password = new_password
+        db.session.add(user)
+        return True
+
 
 @login_manager.user_loader
 def load_user(user_id):
