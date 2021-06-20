@@ -196,10 +196,11 @@ class AnonymousUser(AnonymousUserMixin):
 
 class Post(db.Model):
     __tablename__ = 'posts'
-    id = db.column(db.Integer, primary_key=True)
-    body = db.column(db.Text)
-    timestamp = db.column(db.DateTime, index=True, default=datetime.utcnow)
-    author_id = db.column(db.Integer, db.ForeignKey('users.id'))
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    author_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
 
 login_manager.anonymous_user = AnonymousUser
 
