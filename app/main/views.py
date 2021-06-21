@@ -1,9 +1,8 @@
-from flask import render_template, session, redirect, url_for, current_app, flash, abort, request
+from flask import render_template, redirect, url_for, current_app, flash, abort, request
 from flask_login import login_required, current_user
 
 from .. import db
 from ..models import User, Role, Permission, Post
-from ..email import send_email
 from ..decorators import admin_required
 from . import main
 from .forms import PostForm, EditProfileAdminForm
@@ -81,3 +80,9 @@ def edit_profile_admin(id):
     form.location.data = user.location
     form.about_me.data = user.about_me
     return render_template('edit_profile.html', form=form, user=user)
+
+
+@main.route('/post/<int:id>')
+def post(id):
+    post = Post.query.get_or_404(id)
+    return render_template('post.html', posts=[post])
